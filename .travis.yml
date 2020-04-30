@@ -5,9 +5,11 @@ services:
 
 language: python
 
+env: venv
+
 script:
   - python -m pytest -v
-  - python bandit
+  - bandit
 after_success:
   - sh .travis/deploy_dockerhub.sh
   — test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
