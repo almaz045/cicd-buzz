@@ -5,13 +5,17 @@ services:
 
 language: python
 
+before_install: 
+-git clone https://github.com/TravisToolbox/bandit-travis.git
+
+install: 
+  - ./bandit-travis/install.sh
 
 script:
   - python -m pytest -v
   - ./bandit-travis/scan.sh
 
-install: 
-  - ./bandit-travis/install.sh
+
   
   
   
