@@ -1,7 +1,7 @@
 import random
 
-buzz = ('HeBaJHO OTKyga TbI, rJIaBHoe c LLIbIrbIpgaH', 'KTO HE C HAMu TOT TTog HAMu')
-adjectives = ('gukuu', 'oTTaCHbIu')
+buzz = ('Русский язык', 'татарский')
+adjectives = ('gukuu', 'туда сюда')
 adverbs = ('PuHAC', 'MuLLIAP MAJIAE')
 verbs = ('ugeT POBHO', 'CTTuT KPETTKO', 'CPET METKO')
 
