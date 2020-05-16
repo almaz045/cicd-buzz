@@ -1,9 +1,9 @@
 import random
 
 buzz = ('Русский язык', 'татарский')
-adjectives = ('gukuu', 'туда сюда')
-adverbs = ('PuHAC', 'MuLLIAP MAJIAE')
-verbs = ('ugeT POBHO', 'CTTuT KPETTKO', 'CPET METKO')
+adjectives = ('салам', 'туда сюда')
+adverbs = ('эээйй', 'ага')
+verbs = ('ты че', 'аааа', 'еее')
 
 def sample(l, n = 1):
     result = random.sample(l, n)
