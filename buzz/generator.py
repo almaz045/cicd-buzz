@@ -3,7 +3,7 @@ import random
 buzz = ('Русский язык', 'татарский')
 adjectives = ('салам', 'туда сюда')
 adverbs = ('эээйй', 'ага')
-verbs = ('ты че', 'аааа', 'еее')
+verbs = ('ты че', 'аааа', 'ееерол')
 
 def sample(l, n = 1):
     result = random.sample(l, n)
