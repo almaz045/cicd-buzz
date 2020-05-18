@@ -1,9 +1,16 @@
+# -*- coding: utf-8 -*-
 import random
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
-buzz = ('Русский язык', 'татарскпприй')
+
+
+buzz = ('Пацан ходит ровно', 'Сильно бьет')
 adjectives = ('салам', 'туда сюда')
-adverbs = ('эээйй', 'ага')
-verbs = ('ты че', 'аааа', 'ееерол')
+adverbs = ('Шыгырдан малае', 'дикий')
+verbs = ('Тигр', 'Опасный', 'ербооол')
+
 
 def sample(l, n = 1):
     result = random.sample(l, n)
