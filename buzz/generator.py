@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
 
-sys.setdefaultencoding('utf-8')
-
-
-
 buzz = ('John', 'Smith')
 adjectives = ('YEs', 'No')
 adverbs = (' Ok', 'sdf')
