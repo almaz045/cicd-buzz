@@ -5,12 +5,6 @@ services:
 
 language: python
 
-#before_install: 
- # - git clone https://github.com/TravisToolbox/bandit-travis.git
-
-#install: 
-#  - ./bandit-travis/install.sh
-
 script:
   - python -m pytest -v
  # - ./bandit-travis/scan.sh
@@ -20,6 +14,7 @@ after_success:
   — test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
 
 deploy:
-provider: heroku
-api_key:
-secure: 2e30c7fc-4902-4a18-9114-28cf820f2299
+  provider: heroku
+  api_key:
+    secure: 2e30c7fc-4902-4a18-9114-28cf820f2299
+ 
