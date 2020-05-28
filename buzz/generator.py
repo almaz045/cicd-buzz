@@ -8,7 +8,7 @@ sys.setdefaultencoding('utf-8')
 buzz = ('John', 'Smith')
 adjectives = ('YEs', 'No')
 adverbs = (' Ok', 'sdf')
-verbs = ('asdf, 'asdf', 'asdf')
+verbs = ('asdf', 'asdf', 'asdf')
 
 
 def sample(l, n = 1):
