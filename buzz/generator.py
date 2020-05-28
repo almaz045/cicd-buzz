@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 import random
-import sys
-reload(sys)
+
 sys.setdefaultencoding('utf-8')
 
 
 
-buzz = ('Саламалейкум', 'Уалейкум')
-adjectives = ('Крутой', 'Дикий')
-adverbs = (' Ровно', 'Сильно')
-verbs = ('Бьет', 'Идет', 'Дышит')
+buzz = ('John', 'Smith')
+adjectives = ('YEs', 'No')
+adverbs = (' Ok', 'sdf')
+verbs = ('asdf, 'asdf', 'asdf')
 
 
 def sample(l, n = 1):
