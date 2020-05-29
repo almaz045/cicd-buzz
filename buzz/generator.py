@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import random
 
-buzz = ('John', 'Smith')
+buzz = ('John111', 'Smith')
 adjectives = ('YEs', 'No')
 adverbs = (' Ok', 'sdf')
 verbs = ('asdf', 'asdfsfds', 'asdf')
