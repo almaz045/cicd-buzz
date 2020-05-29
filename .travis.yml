@@ -10,7 +10,7 @@ install:
 
 script:
   - python -m pytest -v
-  - sh bandit -r app.py -f html -o outputfile
+  - bandit -r app.py -f html -o outputfile
 
 after_success:
   — sh .travis/deploy_dockerhub.sh
