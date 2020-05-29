@@ -8,9 +8,12 @@ language: python
 install:
   - pip install -r requirements.txt
 
+before_script:
+  - bandit -r app.py -f html -o outputfile
+
 script:
   - python -m pytest -v
-  - bandit -r app.py -f html -o outputfile
+  
 
 after_success:   
   — sh .travis/deploy_dockerhub.sh 
