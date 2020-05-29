@@ -10,7 +10,7 @@ install:
 
 script:
   - python -m pytest -v
-  - bandit -r ./*.py --exit-zero
+  - bandit --exit-zero -r ./*.py
 after_success:   
   — sh .travis/deploy_dockerhub.sh 
   — test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
