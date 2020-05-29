@@ -5,6 +5,9 @@ services:
 
 language: python
 
+install:
+  - pip install -r requirements.txt
+
 script:
   - python -m pytest -v
   - sh bandit -r app.py -f html -o outputfile
