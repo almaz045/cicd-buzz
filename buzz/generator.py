@@ -4,7 +4,7 @@ import random
 buzz = ('John', 'Smith')
 adjectives = ('YEs', 'No')
 adverbs = (' Ok', 'sdf')
-verbs = ('asdf', 'asdf', 'asdf')
+verbs = ('asdf', 'asdfsfds', 'asdf')
 
 
 def sample(l, n = 1):
