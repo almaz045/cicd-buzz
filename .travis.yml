@@ -13,8 +13,8 @@ script:
 
 after_success: 
  - bandit -r app.py -f html -o outputfile
-"— sh .travis/deploy_dockerhub.sh 
- — test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh"
+ — sh .travis/deploy_dockerhub.sh 
+ — test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh
 
 deploy:
   provider: heroku
