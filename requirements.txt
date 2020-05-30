@@ -1,4 +1,4 @@
 pytest==3.7
 Flask==0.12
 bandit==1.6.2
-UnZip==6.0.0
+unzip==6.0.0
