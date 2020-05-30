@@ -7,9 +7,8 @@ language: python
 
 install:
   - pip install -r requirements.txt
-  - sudo apt-get update
-  - sudo apt-get install python-pip3
-  - sudo pip3 install anchorecli
+  - sudo apt-get install rpm
+  - 
 
 script:
   - python -m pytest -v
@@ -17,6 +16,8 @@ script:
   - wget https://bintray.com/jeremy-long/owasp/download_file?file_path=dependency-check-5.3.2-release.zip 
   - unzip download_file?file_path=dependency-check-5.3.2-release.zip
   - sh dependency-check/bin/dependency-check.sh --project TEST--scan / --out /dep-result
+  - wget https://github.com/aquasecurity/trivy/releases/download/0.8.0/trivy_0.8.0_Linux-64bit.deb
+  - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
   
 after_success:   
   — sh .travis/deploy_dockerhub.sh 
