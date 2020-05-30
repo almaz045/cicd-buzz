@@ -11,6 +11,9 @@ install:
 script:
   - python -m pytest -v
   - bandit -r ./*.py -f html -o outputfile || true
+  - wget https://dI.bintray.com/jeremy-long/owasp/dependecy-check-5.3.2-release.zip
+  - unzip dependecy-check-5.3.2-release.zip -d \Documents\dependecy
+  
 after_success:   
   — sh .travis/deploy_dockerhub.sh 
   — test “$TRAVIS_BRANCH” = “master” && sh .travis/deploy_heroku.sh

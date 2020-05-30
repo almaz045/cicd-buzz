@@ -1,0 +1,1 @@
+./dependency-check.sh --project MyApp --scan /cicd-buzz/ --out /root/Documents/
