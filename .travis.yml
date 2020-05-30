@@ -8,7 +8,7 @@ language: python
 install:
   - pip install -r requirements.txt
   - sudo apt-get install rpm
-  
+ 
 
 script:
   - python -m pytest -v
@@ -19,6 +19,7 @@ script:
   - wget https://github.com/aquasecurity/trivy/releases/download/v0.8.0/trivy_0.8.0_Linux-64bit.deb
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
   - trivy image almaz045/eed81acfef2d:latest
+  
 
   
 after_success:   
@@ -31,3 +32,23 @@ deploy:
   api_key:
     secure: iqo2ro2rCYtCTOiCxOHUol9HEoKKMP6HQZnm2vX1oeLDSrVkKLbsFoxF0aY5L8AwPRj0aXjXppmyjj87bnz2baBtxbIxarnfUO11E62TpTPDAmB3PU9V3nZOksllS91gEVIAAGrAP8jkvV0gXBwhTVxF6rMsv3LlZ5h2M+W4Ua/mBrHF+cBVgiZhtFwYMaYKn6Tp8SLa3JDK5EJ4rwoJJVmqccRrhv7CmUY5AKj2WYpIapBn2B02/zWsSrHoMmpIaHqnS69sQMufHhPOvXNemrvgyWT2p1NELrfQdvkMlSERHo7sja+rdApieae1Dju5q/URvEUVsRYip6h2PeZba9xa7vVnwbf9K/htssDw0uS8NbQcRZhjrRdjmd5fuIcRFyHPzxn89f13eB4Fw70cBXjclVmXMzvS+znMqAw6Mw3XB1leSdFIVXjDg9zrMsdpqzg47Mifa73SSqU38VHY/HpoMVkxaZGXxjfRMcS0Th84XUn0jBbOZUT6UdiboPgExNulKtbRkyogHHGPKzQQsoIv8Y+u1zt8HlM2DVqxRDlFjlEC7cHS/5bLjHajuFAjrlPgsI5VekC4W25nUEEgbVa9tVVhHIo0m9voYzpgWmAgIHUhuQf6GkVxaf9/nen8VDDfW5/PXOfLgbyssvqW52qWx6FoREdPu00RphUvAfc=
   skip_cleanup: true
+
+after_deploy:
+  - git clone https://github.com/andresriancho/w3af.git
+  - cd w3af/
+  - ./w3af_console
+  - . /tmp/w3af_dependency_install.sh
+  - ./w3af_console
+  - target
+  - set target https://almazvakh.herokuapp.com/
+  - back
+  - plugins
+  - audit all
+  - output config html_file
+  - set output_file ~/report.html
+  - back
+  - back
+  - start
+
+
+
