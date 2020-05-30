@@ -18,7 +18,7 @@ script:
   - sh dependency-check/bin/dependency-check.sh --project TEST--scan / --out /dep-result
   - wget https://github.com/aquasecurity/trivy/releases/download/v0.8.0/trivy_0.8.0_Linux-64bit.deb
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
-  - trivy image alpine:3.5
+  - trivy image almaz045/eed81acfef2d:latest
 
   
 after_success:   
