@@ -39,8 +39,7 @@ after_deploy:
   - cd w3af/
   - ./w3af_console
   - . /tmp/w3af_dependency_install.sh
-  - ./w3af_console_docker
-  - . /tmp/w3af_dependency_install.sh
+  - ls -a
   - ./w3af_console
   - target
   - set target https://almazvakh.herokuapp.com/
