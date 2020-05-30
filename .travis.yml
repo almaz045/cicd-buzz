@@ -7,8 +7,9 @@ language: python
 
 install:
   - pip install -r requirements.txt
-
-
+  - apt-get update
+  - apt-get install python-pip
+  - pip install anchorecli
 
 script:
   - python -m pytest -v
