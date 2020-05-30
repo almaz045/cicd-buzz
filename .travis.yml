@@ -8,7 +8,7 @@ language: python
 install:
   - pip install -r requirements.txt
   - sudo apt-get update
-  - sudo apt-get install python-pip
+  - sudo apt-get install python-pip3
   - sudo pip3 install anchorecli
 
 script:
