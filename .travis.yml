@@ -8,7 +8,7 @@ language: python
 install:
   - pip install -r requirements.txt
   - sudo apt-get install rpm
-  - 
+  
 
 script:
   - python -m pytest -v
