@@ -37,10 +37,11 @@ after_deploy:
   - git clone https://github.com/andresriancho/w3af.git
   - ls -a
   - mkdir tmp
+  - ls -a
   - cd w3af/
   - ./w3af_console
   - . /tmp/w3af_dependency_install.sh
-  - ls -a
+  - cd ..
   - ./w3af_console
   - target
   - set target https://almazvakh.herokuapp.com/
