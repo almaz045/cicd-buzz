@@ -36,8 +36,10 @@ deploy:
 after_deploy:
   - git clone https://github.com/andresriancho/w3af.git
   - ls -a
-  - cd w3af/extras/docker/scripts/
-  - sudo ./w3af_console_docker
+  - cd w3af/
+  - ./w3af_console
+  - . /tmp/w3af_dependency_install.sh
+  - ./w3af_console
   - target
   - set target https://almazvakh.herokuapp.com/
   - back
