@@ -1,0 +1,33 @@
+Metadata-Version: 2.0
+Name: python-owasp-zap-v2.4
+Version: 0.0.14
+Summary: OWASP ZAP 2.7 API client
+Home-page: https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project
+Author: ZAP development team
+Author-email: UNKNOWN
+License: ASL2.0
+Download-URL: https://github.com/zaproxy/zap-api-python/releases/tag/0.0.14
+Description-Content-Type: UNKNOWN
+Platform: any
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Security
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: requests
+Requires-Dist: six
+Provides-Extra: tests
+Requires-Dist: mock; extra == 'tests'
+Requires-Dist: pylama; extra == 'tests'
+Requires-Dist: pytest; extra == 'tests'
+Requires-Dist: requests-mock; extra == 'tests'
+
+OWASP Zed Attack Proxy 2.7 API python client (the 2.4 package name has been kept to make it easier to upgrade)
+
+

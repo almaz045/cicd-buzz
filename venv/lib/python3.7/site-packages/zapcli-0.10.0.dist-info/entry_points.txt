@@ -1,0 +1,3 @@
+[console_scripts]
+zap-cli = zapcli.cli:cli
+
