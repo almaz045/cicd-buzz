@@ -17,8 +17,9 @@ script:
   - unzip download_file?file_path=dependency-check-5.3.2-release.zip
   - sh dependency-check/bin/dependency-check.sh --project TEST--scan / --out /dep-result
   - wget https://github.com/aquasecurity/trivy/releases/download/v0.8.0/trivy_0.8.0_Linux-64bit.deb
-  - ls -a
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
+  - trivy image alpine:3.5
+
   
 after_success:   
   — sh .travis/deploy_dockerhub.sh 
