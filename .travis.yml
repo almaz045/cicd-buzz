@@ -34,9 +34,7 @@ deploy:
   skip_cleanup: true
 
 after_deploy:
-  - pip install --upgrade zapcli
-  - zap-cli open-url https://almazvakh.herokuapp.com/
-  - zap-cli spider https://almazvakh.herokuapp.com/
+  - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained     --start-options '-config api.disablekey=true' http://almazvakh.herokuapp.com -l Medium -l Low
 
 
 
