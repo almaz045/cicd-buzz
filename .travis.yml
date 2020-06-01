@@ -24,6 +24,8 @@ script:
   - git add trivy-result.json
   - git commit -m "results"
   - git push origin master
+  - almaz045
+  - "@8Almaz@8Vakhitov"
 
   
 after_success:   
