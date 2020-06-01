@@ -17,7 +17,7 @@ script:
   - wget https://bintray.com/jeremy-long/owasp/download_file?file_path=dependency-check-5.3.2-release.zip 
   - unzip download_file?file_path=dependency-check-5.3.2-release.zip
   - ls -a
-  - sh dependency-check/bin/dependency-check.sh --project TEST--scan ./ --out ./dependecy-result
+  - sh dependency-check/bin/dependency-check.sh --project TEST --scan ./ --out ./dependecy-result
   - git add dependecy-result
   - wget https://github.com/aquasecurity/trivy/releases/download/v0.8.0/trivy_0.8.0_Linux-64bit.deb
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
