@@ -21,12 +21,9 @@ script:
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
   - trivy image -f json -o results/trivy-result.json almaz045/eed81acfef2d:latest
   
-
-  
 after_success :   
-  - sh .travis/push.sh
-  — sh .travis/deploy_dockerhub.sh 
- 
+  
+  — sh .travis/deploy_dockerhub.sh  
 
 deploy:
   provider: releases
@@ -34,6 +31,8 @@ deploy:
   password: QEPwpyw30ZDvdN1tGyd6RUSIfWXGka8RaP19zlHeot9/3jZ3nkuv3i2VIY8h15TS3J1wIdn/eYAr/skCRy7xU1wyesL0bZGgLVg9+fTqLo8KCwRzC5LksSCxUuhvlDxDRXzZ5e5unsQdccWgxVFhBCOCEukwJ0c0afFJ5Qy8COXiNr90V3En0wx24N9ZKhP6LndbebJUV3ZAg6o2yoYqyXSJ8zWl+j3q36GvjaK1rb298f4n17Wno1F9NX45Nv3OAA/ePi/21HS9rXNvtRSIKpmWNLuMGiABMwWrvrfPLmChPIB5PUIlv+GZPILy1PfUxMSbZ0Qy9c2lruU+MAcADtpSWVqblYj/jkN9g7MXDxAvxIML9Ev0tzUSIuZGiuKCzyD6S+pxTtXgp2WPBt/W8E/XUVSDBIwtHBQ6jLb2Xdg2ShCXo5KlgY+3UArpUwL3s1s/rn6RbmAoQlXBNId/SnYWplOMtB24+Lu9fYugAkDc7EL1Ks+a2xPcXJUxWFhbIqMhkxmm5qlgbT77/aANxJTITJsao/LALrSHsZKAN6ju8BtVFcOM85lXKECvGqstXA4f1DPLQz8kaVZXXg58EVz5VjXSowcmR/Qo3CtwXd5zbVHHrWmYgqHvAXh4uYpyGgTyb0Vg5t3h0wvsNhzxgvNOYWDbespZugH8/kw00Ig=
   file: results 
   skip_cleanup: true
+  on:
+    tags: true
   provider: heroku
   app: almazvakh
   api_key:
