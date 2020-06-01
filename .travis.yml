@@ -23,7 +23,7 @@ script:
 
   
 after_success :   
-  - sh .travis / push.sh
+  - sh .travis/push.sh;
   — sh .travis/deploy_dockerhub.sh 
  
 
