@@ -13,13 +13,18 @@ install:
 script:
   - python -m pytest -v
   - bandit -r ./*.py -f html -o bandit-result || true
+  - git add bandit-result.html
   - wget https://bintray.com/jeremy-long/owasp/download_file?file_path=dependency-check-5.3.2-release.zip 
   - unzip download_file?file_path=dependency-check-5.3.2-release.zip
+  - ls -a
   - sh dependency-check/bin/dependency-check.sh --project TEST--scan / --out /dependecy-result
+  - git add dependecy-result
   - wget https://github.com/aquasecurity/trivy/releases/download/v0.8.0/trivy_0.8.0_Linux-64bit.deb
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
   - trivy image -f json -o trivy-result.json almaz045/eed81acfef2d:latest
-  
+  - git add trivy-result.json
+  - git commit -m "results"
+  - git push origin master
 
   
 after_success:   
@@ -35,11 +40,11 @@ deploy:
 
 after_deploy:
   - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained     --start-options '-config api.disablekey=true' http://almazvakh.herokuapp.com -l Medium -l Low
-  - git add bandit-result.html
-  - git add dependecy-result
-  - git add trivy-result.json
-  - git commit -m "results"
-  - git push origin master
+  
+  
+  
+  
+  
   
 
 
