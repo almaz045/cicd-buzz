@@ -23,7 +23,7 @@ script:
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
   - trivy image -f json -o trivy-result.json almaz045/eed81acfef2d:latest
   - ls -a
-  - git add trivy-result
+  - git add trivy-result.json
   - git commit -m "results"
   - git push origin master
 
