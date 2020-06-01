@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import random
 
-buzz = ('John111', 'Smith')
-adjectives = ('YEs', 'No')
-adverbs = (' Ok', 'sdf')
-verbs = ('asdf', 'asdfsfds', 'asdf')
+buzz = ('KAI', 'Pup Zemli')
+adjectives = ('KNRTU', 'Kazan')
+adverbs = (' Tatarstan', 'ISS')
+verbs = ('InfoBez', 'CI/CD', 'Diploma')
 
 
 def sample(l, n = 1):
