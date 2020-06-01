@@ -34,22 +34,9 @@ deploy:
   skip_cleanup: true
 
 after_deploy:
-  - git clone https://github.com/andresriancho/w3af.git
-  - ls -a
-  - cd w3af/
-  - ./w3af_console
-  - . /tmp/w3af_dependency_install.sh
-  - ./w3af_console
-  - target
-  - set target https://almazvakh.herokuapp.com/
-  - back
-  - plugins
-  - audit all
-  - output config html_file
-  - set output_file ~/report.html
-  - back
-  - back
-  - start
+  - pip install --upgrade zapcli
+  - zap-cli open-url https://almazvakh.herokuapp.com/
+  - zap-cli spider https://almazvakh.herokuapp.com/
 
 
 
