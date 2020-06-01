@@ -21,11 +21,12 @@ script:
   - wget https://github.com/aquasecurity/trivy/releases/download/v0.8.0/trivy_0.8.0_Linux-64bit.deb
   - sudo dpkg -i trivy_0.8.0_Linux-64bit.deb
   - trivy image -f json -o trivy-result.json almaz045/eed81acfef2d:latest
+  - git init
   - git add trivy-result.json
   - git commit -m "results"
+  - git remote add origin git@github.com:almaz045/cicd-buzz.git
   - git push origin master
-  - almaz045
-  - "@8Almaz@8Vakhitov"
+
 
   
 after_success:   
