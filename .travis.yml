@@ -32,7 +32,7 @@ deploy:
   file: results 
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
   provider: heroku
   app: almazvakh
   api_key:
