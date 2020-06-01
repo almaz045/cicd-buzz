@@ -35,9 +35,11 @@ deploy:
 
 after_deploy:
   - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained     --start-options '-config api.disablekey=true' http://almazvakh.herokuapp.com -l Medium -l Low
-  - git push bandit-result.html
-  - git push dependecy-result
-  - git push trivy-result.json
+  - git add bandit-result.html
+  - git add dependecy-result
+  - git add trivy-result.json
+  - git commit -m "results"
+  - git push origin master
   
 
 
