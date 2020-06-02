@@ -33,7 +33,7 @@ deploy:
   skip_cleanup: true
 
 after_deploy:
-  - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained     --start-options '-config api.disablekey=true' http://almazvakh.herokuapp.com -l Medium -l Low
+  - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://almazvakh.herokuapp.com -l Medium -l Low
   
   
   
