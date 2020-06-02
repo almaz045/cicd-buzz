@@ -7,8 +7,7 @@ language: python
 
 install:
   - pip install -r requirements.txt
-  - sudo apt-get install rpm
- 
+  - sudo apt-get install rpm 
 
 script:
   - python -m pytest -v
@@ -22,7 +21,6 @@ script:
   - trivy image -f json -o results/trivy-result.json almaz045/eed81acfef2d:latest
   
 after_success :   
-  
   — sh .travis/deploy_dockerhub.sh  
 
 deploy:
@@ -35,9 +33,7 @@ deploy:
 after_deploy:
   - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://almazvakh.herokuapp.com -l Medium -l Low
   - ls -a
-  - git add .
-  - git commit -m "results"
-  - git push origin master 
+  - sftp  almaz@192.168.1.9:results 
   
   
   
