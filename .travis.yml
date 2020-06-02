@@ -33,7 +33,7 @@ deploy:
 after_deploy:
   - docker run -i owasp/zap2docker-stable zap-cli quick-scan --self-contained --start-options '-config api.disablekey=true' http://almazvakh.herokuapp.com -l Medium -l Low
   - ls -a
-  - scp -r almaz@192.168.1.9:results results/ -p a
+  - scp -r almaz@192.168.1.9:results results/ -i a
   - sftp  almaz@192.168.1.9:results 
   
   
